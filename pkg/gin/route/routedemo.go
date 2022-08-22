@@ -69,7 +69,7 @@ func main() {
 	// route.LoadHTMLGlob("templates/*")
 
 	user1 := &user{Name: "Charles", Age: 20}
-	user2 := &user{Name: "Xiaowei", Age: 22}
+	user2 := &user{Name: "Xiaomi", Age: 22}
 	route.GET("/users", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "user.tmpl", gin.H{
 			"title": "user",
