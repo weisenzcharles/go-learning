@@ -12,7 +12,7 @@ import (
 func main() {
 	//gin.SetMode("release")
 	router := gin.Default()
-	//err := router.SetTrustedProxies([]string{"192.168.0.64"})
+	//err := route.SetTrustedProxies([]string{"192.168.0.64"})
 	err := router.SetTrustedProxies([]string{"127.0.0.1"})
 	if err != nil {
 		return
@@ -20,9 +20,20 @@ func main() {
 	router.GET("/", func(c *gin.Context) {
 		fmt.Printf("ClientIP: %s, Host: %s \n", c.ClientIP(), c.Request.Host)
 	})
-	router.GET("/hello", func(c *gin.Context) {
-		c.String(http.StatusOK, "hello World!")
+	router.GET("/get", func(c *gin.Context) {
+		c.String(http.StatusOK, "get!")
 	})
+
+	router.PUT("/put", func(c *gin.Context) {
+		c.String(http.StatusOK, "put!")
+	})
+	router.DELETE("/delete", func(c *gin.Context) {
+		c.String(http.StatusOK, "delete!")
+	})
+	router.POST("/post", func(c *gin.Context) {
+		c.String(http.StatusOK, "post!")
+	})
+
 	err = router.Run(":8088")
 	if err != nil {
 		return

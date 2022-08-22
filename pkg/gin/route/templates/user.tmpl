@@ -1,0 +1,9 @@
+<!-- templates/user.tmpl -->
+<html>
+<body>
+    <p>hello, {{.title}}</p>
+    {{range $index, $user := .users }}
+    <p>{{ $index }}: {{ $user.Name }} is {{ $user.Age }} years old.</p>
+    {{ end }}
+</body>
+</html>

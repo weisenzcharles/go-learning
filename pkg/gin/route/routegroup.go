@@ -10,11 +10,10 @@ import (
 */
 func main() {
 	// 1.创建路由
-	// 默认使用了2个中间件Logger(), Recovery()
+	// 默认使用了 2 个中间件 Logger(), Recovery()
 	router := gin.Default()
-	// 路由组1 ，处理GET请求
+	// 路由组 v1 ，处理 GET 请求
 	v1 := router.Group("/v1")
-	// {} 是书写规范
 	{
 		v1.GET("/login", login)
 		v1.GET("submit", submit)
