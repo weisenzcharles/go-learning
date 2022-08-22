@@ -13,7 +13,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func TestHttp(t *testing.T) {
-	req := httptest.NewRequest("GET", "http://example.com/foo", nil)
+	req := httptest.NewRequest("GET", "https://example.com/foo", nil)
 	w := httptest.NewRecorder()
 	helloHandler(w, req)
 	bytes, _ := ioutil.ReadAll(w.Result().Body)
@@ -38,7 +38,7 @@ func TestConn(t *testing.T) {
 	http.HandleFunc("/hello", helloHandler)
 	go http.Serve(ln, nil)
 
-	resp, err := http.Get("http://" + ln.Addr().String() + "/hello")
+	resp, err := http.Get("https://" + ln.Addr().String() + "/hello")
 	handleError(t, err)
 
 	defer resp.Body.Close()

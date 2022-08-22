@@ -9,7 +9,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// 定义 User 模型，绑定 users 表，ORM 库操作数据库，需要定义一个 struct 类型和 MySql 表进行绑定或者叫映射，struct 字段和 MySql 表字段一一对应
+// User 定义 User 模型，绑定 users 表，ORM 库操作数据库，需要定义一个 struct 类型和 MySql 表进行绑定或者叫映射，struct 字段和 MySql 表字段一一对应
 // 在这里 User 类型可以代表 MySql users 表
 type User struct {
 	ID int64 // 主键
@@ -22,7 +22,7 @@ type User struct {
 	CreateTime int64 `gorm:"column:createtime"`
 }
 
-// 设置表名，可以通过给 struct 类型定义 TableName 函数，返回当前 struct 绑定的 MySql 表名是什么
+// TableName 设置表名，可以通过给 struct 类型定义 TableName 函数，返回当前 struct 绑定的 MySql 表名是什么
 func (u User) TableName() string {
 	// 绑定 MySql 表名为 users
 	return "users"
