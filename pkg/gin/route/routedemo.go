@@ -65,7 +65,11 @@ func main() {
 		Age  int8
 	}
 	fmt.Println(filepath.Join(os.Getenv("GOPATH")))
+<<<<<<< HEAD
 	route.LoadHTMLGlob("templates/*")
+=======
+	route.LoadHTMLGlob("D:/Source/Go/go-learning/pkg/gin/route/html/templates/*")
+>>>>>>> 941a4ef3b113df8c0e61e967c543d9e6a832a978
 	// route.LoadHTMLGlob("templates/*")
 
 	user1 := &user{Name: "Charles", Age: 20}
