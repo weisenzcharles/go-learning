@@ -7,6 +7,13 @@ import (
 )
 
 func main() {
+	// 定义一个 int 型的管道
+	c := make(chan int)
+	defer close(c)
+	go func() { c <- 3 + 4 }()
+	i := <-c
+	fmt.Println(i)
+
 	start := time.Now()
 
 	apis := []string{
